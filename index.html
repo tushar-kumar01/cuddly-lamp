@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Beginner's Guitar Blueprint</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Database Files -->
+    <script src="tuning-database.js"></script>
+    <script src="music-theory-database.js"></script>
+    
+    <!-- Gemini AI Integration -->
+    <script>
+        // AI Service logic is now located in script.js
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ AI integration placeholder in HTML is ready.');
+        });
+    </script>
+    
+    <!-- Chosen Palette: GeeksforGeeks-inspired with Dynamic Accents -->
+    <!-- Application Structure Plan: The application is designed as a single-page dashboard with a fixed sidebar navigation. This structure was chosen to provide a non-linear, user-driven learning experience. A beginner can either follow the path sequentially or jump directly to a topic of interest, such as 'Play Songs' or 'YouTube Tutors'. This modular approach breaks down the dense report into manageable, interactive sections, reducing cognitive load and enhancing engagement. The main content area dynamically updates, keeping the user in a consistent and focused learning environment. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Foundational Framework -> Goal: Inform/Motivate -> Viz/Presentation: Interactive cards for each concept -> Interaction: Click to reveal text -> Justification: More engaging than static text, breaks down concepts. -> Library/Method: HTML/CSS/JS.
+        - Report Info: Guitar Anatomy -> Goal: Teach parts -> Viz/Presentation: Interactive diagram -> Interaction: Hover to highlight and display info -> Justification: Kinesthetic learning is more effective for anatomy. -> Library/Method: HTML/CSS/JS.
+        - Report Info: Essential Chords -> Goal: Teach fingerings -> Viz/Presentation: Grid of canvas-drawn chord diagrams -> Interaction: Click to see details -> Justification: Visual and interactive way to learn chords without static images. -> Library/Method: Canvas API via JS.
+        - Report Info: Beginner Songs -> Goal: Apply skills -> Viz/Presentation: Filterable HTML table -> Interaction: Select known chords to filter song list -> Justification: Provides immediate, personalized goals and motivation. -> Library/Method: HTML/JS.
+        - Report Info: YouTube Tutors -> Goal: Guide to resources -> Viz/Presentation: Cards with embedded video players -> Interaction: Click to watch playlist within the app -> Justification: Creates a seamless learning hub, preventing user drop-off. -> Library/Method: HTML/JS with YouTube IFrame API.
+        - Report Info: Creative Progression -> Goal: Inspire creativity -> Viz/Presentation: Text generation -> Interaction: User input with a button click -> Justification: The Gemini API can generate creative musical ideas. -> Library/Method: JS with Gemini API fetch.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="antialiased">
+    <div class="flex h-screen bg-gray-100">
+        <!-- Sidebar -->
+        <aside class="w-64 flex-shrink-0 bg-[#222] border-r border-gray-700 hidden md:block">
+            <div class="p-6">
+                <h1 class="text-2xl font-bold text-white">Guitar Blueprint</h1>
+            </div>
+            <nav class="mt-6">
+                <a href="#get-started" class="sidebar-link active flex items-center px-6 py-3">
+                    <span class="ml-3">Get Started</span>
+                </a>
+                <a href="#the-basics" class="sidebar-link flex items-center px-6 py-3">
+                    <span class="ml-3">The Basics</span>
+                </a>
+                <a href="#chords-scales" class="sidebar-link flex items-center px-6 py-3">
+                    <span class="ml-3">Chords & Scales</span>
+                </a>
+                <a href="#chord-finder" class="sidebar-link flex items-center px-6 py-3">
+                    <span class="ml-3">Chord Finder 🎯</span>
+                </a>
+                <a href="#guitar-tuner" class="sidebar-link flex items-center px-6 py-3">
+                    <span class="ml-3">Guitar Tuner 🎸</span>
+                </a>
+                <a href="#chord-progression" class="sidebar-link flex items-center px-6 py-3">
+                    <span class="ml-3">Chord Progressions ✨</span>
+                </a>
+                <a href="#play-songs" class="sidebar-link flex items-center px-6 py-3">
+                    <span class="ml-3">Play Songs</span>
+                </a>
+                <a href="#youtube-tutors" class="sidebar-link flex items-center px-6 py-3">
+                    <span class="ml-3">YouTube Tutors</span>
+                </a>
+                <a href="#metronome" class="sidebar-link flex items-center px-6 py-3">
+                    <span class="ml-3">Metronome 🎵</span>
+                </a>
+                <a href="#practice-plan" class="sidebar-link flex items-center px-6 py-3">
+                    <span class="ml-3">Practice Plan</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="flex-1 overflow-y-auto bg-transparent">
+            <div class="p-4 md:p-8">
+                
+                <!-- Get Started Section -->
+                <section id="get-started" class="content-section">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">The Foundational Framework</h2>
+                    <p class="text-gray-600 mb-6">Your journey starts here. Success isn't just about technique; it's about building the right mindset, environment, and having the essential gear ready.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="content-card p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-green-600">Cultivating the Right Mindset</h3>
+                            <p>Adopt a structured approach to your practice. Think of each session as a mini-lesson with a clear goal. This internal discipline is key for self-taught learners.</p>
+                        </div>
+                        <div class="content-card p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-green-600">Your Learning Environment</h3>
+                            <p>Engineer your space for success. Keep your guitar visible, ensure good lighting, and use a comfortable, armless chair. A dedicated, inviting space removes barriers to practice.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-card p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-green-600">Essential Gear & Tuning</h3>
+                        <p>Before you play a note, get your setup right. Choose a guitar that feels comfortable to you. The most critical first skill is tuning. An out-of-tune guitar will always sound wrong, so master this fundamental step first using online tuners or apps.</p>
+                    </div>
+                </section>
+
+                <!-- The Basics Section -->
+                <section id="the-basics" class="content-section hidden">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">The Beginner's Toolkit</h2>
+                    <p class="text-gray-600 mb-6">From understanding your instrument's layout to making your first sounds, these are the fundamental physical skills you'll build upon.</p>
+                    <div class="content-card p-6 mb-6">
+                        <h3 class="text-xl font-semibold mb-2 text-green-600">Anatomy of the Guitar</h3>
+                        <p class="mb-4">Get to know your instrument. Hover over the parts below to learn their names. The six strings are named E, A, D, G, B, E from thickest to thinnest. A good mnemonic is: <strong>E</strong>lephants <strong>A</strong>nd <strong>D</strong>onkeys <strong>G</strong>row <strong>B</strong>ig <strong>E</strong>ars.</p>
+                        <div id="guitar-anatomy" class="relative w-full max-w-sm mx-auto h-96 bg-contain bg-no-repeat bg-center" style="background-image: url('https://placehold.co/300x400/FFFFFF/4A4A4A?text=Guitar+Outline');">
+                            <div class="absolute w-20 h-10 top-[2%] left-[40%] cursor-pointer group anatomy-point">
+                                <span class="anatomy-label">Headstock</span>
+                                <div class="anatomy-tooltip">Holds the tuning pegs.</div>
+                            </div>
+                            <div class="absolute w-20 h-10 top-[40%] left-[30%] cursor-pointer group anatomy-point">
+                                <span class="anatomy-label">Neck</span>
+                                <div class="anatomy-tooltip">Where you press the strings.</div>
+                            </div>
+                            <div class="absolute w-20 h-10 top-[60%] left-[45%] cursor-pointer group anatomy-point">
+                                <span class="anatomy-label">Body</span>
+                                <div class="anatomy-tooltip">The main part of the guitar.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="content-card p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-green-600">Your First Technique</h3>
+                            <p>Proper fretting is crucial. Place your finger just <strong>behind</strong> the metal fret wire, not on top of it, to get a clear sound with minimal pressure. Start with simple single-note riffs to build dexterity.</p>
+                        </div>
+                        <div class="content-card p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-green-600">Strumming and Rhythm</h3>
+                            <p>Start with simple down-strums. While learning patterns like D-D-U-D-U-D is useful, the ultimate goal is to "feel" the rhythm by listening to the song. Patterns are a tool, not the final destination.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Chords & Scales Section -->
+                <section id="chords-scales" class="content-section hidden">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Building Your Musical Vocabulary</h2>
+                    <p class="text-gray-600 mb-6">Expand from single notes to harmonies. These are the essential chords and scales that form the foundation of countless songs.</p>
+                    <div class="content-card p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-green-600">The Essential Eight Open Chords</h3>
+                        <p class="mb-4">These eight chords will allow you to play a huge number of popular songs. Learn to read the diagrams: vertical lines are strings (thickest on the left), horizontal lines are frets, and dots show finger placement.</p>
+                        <div id="chord-diagram-container" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 text-center">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Chord Finder Section -->
+                <section id="chord-finder" class="content-section hidden">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Advanced Chord Finder 🎯</h2>
+                    <p class="text-gray-600 mb-6">Discover new chords, explore variations, and expand your musical vocabulary beyond the basic chords.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Chord Search & Selection -->
+                        <div class="content-card p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-green-600">Find Your Chord</h3>
+                            
+                            <!-- AI Chord Search -->
+                            <div class="mb-6 p-4 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border border-purple-200">
+                                <h4 class="text-lg font-semibold mb-2 text-purple-700">🤖 AI Chord Search</h4>
+                                <p class="text-sm text-purple-600 mb-3">Ask AI to find chords naturally - try "show me jazz chords for beginners" or "what chord sounds sad?"</p>
+                                <div class="flex gap-2">
+                                    <input type="text" id="ai-chord-search" 
+                                           class="flex-1 p-3 border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" 
+                                           placeholder="e.g., 'happy sounding chords for pop songs' or 'barre chords in key of G'">
+                                    <button id="search-chords-btn" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                                        Search
+                                    </button>
+                                </div>
+                                <div class="flex items-center mt-2">
+                                    <div id="chord-search-spinner" class="spinner hidden mr-2" style="border-top-color: #7c3aed;"></div>
+                                    <div id="chord-search-status" class="text-sm text-purple-600"></div>
+                                </div>
+                                <div id="ai-chord-results" class="mt-4 hidden">
+                                    <h5 class="font-semibold text-purple-700 mb-2">AI Suggestions:</h5>
+                                    <div id="ai-chord-suggestions" class="space-y-2"></div>
+                                </div>
+                                
+                                <!-- Conversation History -->
+                                <div id="ai-conversation-history" class="mt-4">
+                                    <h5 class="font-semibold text-purple-700 mb-2 flex justify-between items-center">
+                                        <span>Conversation History</span>
+                                        <button id="clear-conversation-btn" class="text-xs text-purple-500 hover:underline font-normal">Clear History</button>
+                                    </h5>
+                                    <div id="ai-history-log" class="space-y-2 bg-gray-50 p-3 rounded-lg max-h-48 overflow-y-auto border border-purple-100">
+                                        <p class="text-xs text-gray-500 italic">Your conversation with the AI will appear here.</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Quick Search Buttons -->
+                                <div class="mt-3">
+                                    <p class="text-xs text-purple-600 mb-2">Quick searches:</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <button class="quick-search-btn bg-purple-100 hover:bg-purple-200 text-purple-700 px-2 py-1 rounded text-xs transition-colors" data-query="beginner chords">Beginner</button>
+                                        <button class="quick-search-btn bg-purple-100 hover:bg-purple-200 text-purple-700 px-2 py-1 rounded text-xs transition-colors" data-query="jazz chords">Jazz</button>
+                                        <button class="quick-search-btn bg-purple-100 hover:bg-purple-200 text-purple-700 px-2 py-1 rounded text-xs transition-colors" data-query="sad sounding chords">Sad</button>
+                                        <button class="quick-search-btn bg-purple-100 hover:bg-purple-200 text-purple-700 px-2 py-1 rounded text-xs transition-colors" data-query="happy chords">Happy</button>
+                                        <button class="quick-search-btn bg-purple-100 hover:bg-purple-200 text-purple-700 px-2 py-1 rounded text-xs transition-colors" data-query="barre chords">Barre</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Manual Chord Selection -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Manual Selection - Root Note:</label>
+                                <div class="grid grid-cols-7 gap-2 mb-4">
+                                    <button class="chord-root-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm font-semibold transition-colors" data-root="C">C</button>
+                                    <button class="chord-root-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm font-semibold transition-colors" data-root="C#">C#</button>
+                                    <button class="chord-root-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm font-semibold transition-colors" data-root="D">D</button>
+                                    <button class="chord-root-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm font-semibold transition-colors" data-root="D#">D#</button>
+                                    <button class="chord-root-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm font-semibold transition-colors" data-root="E">E</button>
+                                    <button class="chord-root-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm font-semibold transition-colors" data-root="F">F</button>
+                                    <button class="chord-root-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm font-semibold transition-colors" data-root="F#">F#</button>
+                                </div>
+                                <div class="grid grid-cols-5 gap-2">
+                                    <button class="chord-root-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm font-semibold transition-colors" data-root="G">G</button>
+                                    <button class="chord-root-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm font-semibold transition-colors" data-root="G#">G#</button>
+                                    <button class="chord-root-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm font-semibold transition-colors" data-root="A">A</button>
+                                    <button class="chord-root-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm font-semibold transition-colors" data-root="A#">A#</button>
+                                    <button class="chord-root-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm font-semibold transition-colors" data-root="B">B</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Chord Quality Selection -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Chord Type:</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button class="chord-type-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm transition-colors" data-type="major">Major</button>
+                                    <button class="chord-type-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm transition-colors" data-type="minor">Minor</button>
+                                    <button class="chord-type-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm transition-colors" data-type="7">Dominant 7</button>
+                                    <button class="chord-type-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm transition-colors" data-type="maj7">Major 7</button>
+                                    <button class="chord-type-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm transition-colors" data-type="min7">Minor 7</button>
+                                    <button class="chord-type-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm transition-colors" data-type="sus4">Sus4</button>
+                                    <button class="chord-type-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm transition-colors" data-type="sus2">Sus2</button>
+                                    <button class="chord-type-btn bg-gray-100 hover:bg-green-100 p-2 rounded text-sm transition-colors" data-type="dim">Diminished</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Search Results -->
+                            <div class="mb-4">
+                                <div id="selected-chord-name" class="text-2xl font-bold text-green-600 text-center mb-2">Select a chord</div>
+                                <div id="chord-variations" class="text-center">
+                                    <p class="text-gray-500 text-sm">Choose root note and chord type above</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Chord Display & Info -->
+                        <div class="content-card p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-green-600">Chord Information</h3>
+                            
+                            <!-- Large Chord Diagram -->
+                            <div class="flex justify-center mb-4">
+                                <canvas id="chord-finder-diagram" width="200" height="250" class="border border-gray-200 rounded-lg"></canvas>
+                            </div>
+                            
+                            <!-- Chord Info -->
+                            <div id="chord-info" class="bg-gray-50 p-4 rounded-lg">
+                                <div class="text-center text-gray-500">
+                                    <p>Select a chord to see the fingering pattern and information.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Difficulty Level -->
+                            <div id="chord-difficulty" class="mt-4 text-center hidden">
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold">
+                                    Difficulty: <span id="difficulty-level"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Chord Categories -->
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4 text-green-600">Browse by Category</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="content-card p-4 cursor-pointer hover:shadow-lg transition-shadow" data-category="beginner">
+                                <h4 class="font-semibold text-gray-800">Beginner Chords</h4>
+                                <p class="text-sm text-gray-600 mt-1">Essential open chords for getting started</p>
+                            </div>
+                            <div class="content-card p-4 cursor-pointer hover:shadow-lg transition-shadow" data-category="barre">
+                                <h4 class="font-semibold text-gray-800">Barre Chords</h4>
+                                <p class="text-sm text-gray-600 mt-1">Moveable chord shapes across the fretboard</p>
+                            </div>
+                            <div class="content-card p-4 cursor-pointer hover:shadow-lg transition-shadow" data-category="jazz">
+                                <h4 class="font-semibold text-gray-800">Jazz Chords</h4>
+                                <p class="text-sm text-gray-600 mt-1">Extended chords for sophisticated harmony</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Guitar Tuner Section -->
+                <section id="guitar-tuner" class="content-section hidden">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Guitar Tuner 🎸</h2>
+                    <p class="text-gray-600 mb-6">Keep your guitar perfectly in tune with this chromatic tuner. Use your device's microphone to detect and tune each string.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Tuner Interface -->
+                        <div class="content-card p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-green-600">Chromatic Tuner</h3>
+                            
+                            <!-- Tuner Display -->
+                            <div class="text-center mb-6">
+                                <div id="tuner-note" class="text-6xl font-bold text-green-600 mb-2">--</div>
+                                <div id="tuner-frequency" class="text-lg text-gray-600 mb-4">-- Hz</div>
+                                
+                                <!-- Tuning Meter -->
+                                <div class="relative w-full h-4 bg-gray-200 rounded-full mb-4">
+                                    <div id="tuning-needle" class="absolute h-full w-1 bg-red-500 rounded-full transition-all duration-300" style="left: 50%; transform: translateX(-50%);"></div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-px h-full bg-green-500"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Tuning Status -->
+                                <div id="tuning-status" class="text-sm font-semibold text-gray-500">
+                                    Click "Start Tuning" to begin
+                                </div>
+                            </div>
+                            
+                            <!-- Controls -->
+                            <div class="text-center">
+                                <button id="start-tuning" class="green-button mb-4">
+                                    🎤 Start Tuning
+                                </button>
+                                <button id="stop-tuning" class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full font-semibold transition-colors hidden">
+                                    ⏹ Stop Tuning
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- String Reference & Tuning Guide -->
+                        <div class="content-card p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-green-600">String Reference</h3>
+                            
+                            <!-- Standard Tuning Reference -->
+                            <div class="mb-6">
+                                <h4 class="font-semibold mb-3">Standard Tuning (E-A-D-G-B-E):</h4>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="font-semibold">1st String (High E)</span>
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-green-600 font-bold">E4 (329.6 Hz)</span>
+                                            <button class="reference-note-btn bg-green-100 hover:bg-green-200 px-2 py-1 rounded text-xs" data-note="E4" data-freq="329.6">Play</button>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="font-semibold">2nd String (B)</span>
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-green-600 font-bold">B3 (246.9 Hz)</span>
+                                            <button class="reference-note-btn bg-green-100 hover:bg-green-200 px-2 py-1 rounded text-xs" data-note="B3" data-freq="246.9">Play</button>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="font-semibold">3rd String (G)</span>
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-green-600 font-bold">G3 (196.0 Hz)</span>
+                                            <button class="reference-note-btn bg-green-100 hover:bg-green-200 px-2 py-1 rounded text-xs" data-note="G3" data-freq="196.0">Play</button>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="font-semibold">4th String (D)</span>
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-green-600 font-bold">D3 (146.8 Hz)</span>
+                                            <button class="reference-note-btn bg-green-100 hover:bg-green-200 px-2 py-1 rounded text-xs" data-note="D3" data-freq="146.8">Play</button>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="font-semibold">5th String (A)</span>
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-green-600 font-bold">A2 (110.0 Hz)</span>
+                                            <button class="reference-note-btn bg-green-100 hover:bg-green-200 px-2 py-1 rounded text-xs" data-note="A2" data-freq="110.0">Play</button>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="font-semibold">6th String (Low E)</span>
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-green-600 font-bold">E2 (82.4 Hz)</span>
+                                            <button class="reference-note-btn bg-green-100 hover:bg-green-200 px-2 py-1 rounded text-xs" data-note="E2" data-freq="82.4">Play</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Tuning Tips -->
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-800 mb-2">Tuning Tips:</h4>
+                                <ul class="text-sm text-blue-700 space-y-1">
+                                    <li>• Allow microphone access when prompted</li>
+                                    <li>• Pluck strings one at a time, cleanly</li>
+                                    <li>• Tune in a quiet environment</li>
+                                    <li>• Always tune up to pitch (from below)</li>
+                                    <li>• Check tuning before every practice session</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Chord Progression Section (NEW) -->
+                <section id="chord-progression" class="content-section hidden">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">AI Chord Progression Generator ✨</h2>
+                    <p class="text-gray-600 mb-6">Spark your creativity by generating a unique chord progression. Describe a mood or genre, and the AI will create a sequence of chords for you to play.</p>
+                    <div class="content-card p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-green-600">Generate a Progression</h3>
+                        <textarea id="progression-prompt" class="w-full h-24 p-2 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-[#4CAF50] mb-4" placeholder="e.g., A sad, rainy day progression" rows="3"></textarea>
+                        <div class="flex items-center space-x-2">
+                            <button id="generate-progression-btn" class="green-button">
+                                Generate Progression
+                            </button>
+                            <div id="progression-spinner" class="spinner hidden"></div>
+                        </div>
+                        <div id="progression-output" class="mt-4 p-4 bg-gray-50 border border-gray-200 rounded-lg whitespace-pre-line"></div>
+                    </div>
+                </section>
+
+                <!-- Play Songs Section -->
+                <section id="play-songs" class="content-section hidden">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Your First Repertoire</h2>
+                    <p class="text-gray-600 mb-6">The most rewarding part! Apply your new skills to play actual songs. Start with songs that use just a few simple chords.</p>
+                    <div class="content-card p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-green-600">Filter Songs by Chords You Know</h3>
+                        <div id="chord-filter" class="flex flex-wrap gap-2 mb-4">
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead>
+                                    <tr class="border-b">
+                                        <th class="p-2">Song Title</th>
+                                        <th class="p-2">Artist</th>
+                                        <th class="p-2">Chords</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="song-list">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- YouTube Tutors Section -->
+                <section id="youtube-tutors" class="content-section hidden">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">The Digital Mentor</h2>
+                    <p class="text-gray-600 mb-6">Leverage the power of online lessons. These YouTube tutors offer structured, high-quality courses for free.</p>
+                    <div id="tutor-container" class="space-y-6">
+                    </div>
+                </section>
+
+                <!-- Metronome Section -->
+                <section id="metronome" class="content-section hidden">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Interactive Metronome 🎵</h2>
+                    <p class="text-gray-600 mb-6">Develop your timing and rhythm with this interactive metronome. Essential for practicing chord changes, strumming patterns, and building your internal musical clock.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Metronome Controls -->
+                        <div class="content-card p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-green-600">Metronome Controls</h3>
+                            
+                            <!-- Visual Beat Indicator -->
+                            <div class="flex justify-center mb-6">
+                                <div id="beat-indicator" class="w-20 h-20 rounded-full bg-gray-300 border-4 border-gray-400 flex items-center justify-center text-2xl font-bold transition-all duration-100">
+                                    ♪
+                                </div>
+                            </div>
+                            
+                            <!-- BPM Display and Controls -->
+                            <div class="text-center mb-6">
+                                <div class="text-4xl font-bold text-green-600 mb-2" id="bpm-display">120</div>
+                                <div class="text-gray-600 text-sm">BPM (Beats Per Minute)</div>
+                            </div>
+                            
+                            <!-- BPM Slider -->
+                            <div class="mb-6">
+                                <input type="range" id="bpm-slider" min="40" max="200" value="120" 
+                                       class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                    <span>40</span>
+                                    <span>120</span>
+                                    <span>200</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Control Buttons -->
+                            <div class="flex gap-3 justify-center mb-4">
+                                <button id="metronome-play" class="green-button flex items-center gap-2">
+                                    <span>▶</span> Play
+                                </button>
+                                <button id="metronome-stop" class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full font-semibold transition-colors">
+                                    <span>⏹</span> Stop
+                                </button>
+                            </div>
+                            
+                            <!-- Tap Tempo -->
+                            <div class="text-center">
+                                <button id="tap-tempo" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold transition-colors">
+                                    Tap Tempo
+                                </button>
+                                <div class="text-xs text-gray-500 mt-1">Tap repeatedly to set tempo</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Practice Guide -->
+                        <div class="content-card p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-green-600">Practice Guide</h3>
+                            
+                            <!-- Time Signature Selector -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Time Signature:</label>
+                                <select id="time-signature" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                    <option value="4">4/4 (Most Common)</option>
+                                    <option value="3">3/4 (Waltz)</option>
+                                    <option value="2">2/4 (March)</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Volume Control -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Volume:</label>
+                                <input type="range" id="volume-slider" min="0" max="100" value="70" 
+                                       class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                            </div>
+                            
+                            <!-- Preset Tempos -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Common Tempos:</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button class="tempo-preset bg-gray-100 hover:bg-gray-200 p-2 rounded text-sm transition-colors" data-bpm="60">
+                                        Largo (60)
+                                    </button>
+                                    <button class="tempo-preset bg-gray-100 hover:bg-gray-200 p-2 rounded text-sm transition-colors" data-bpm="80">
+                                        Andante (80)
+                                    </button>
+                                    <button class="tempo-preset bg-gray-100 hover:bg-gray-200 p-2 rounded text-sm transition-colors" data-bpm="120">
+                                        Moderato (120)
+                                    </button>
+                                    <button class="tempo-preset bg-gray-100 hover:bg-gray-200 p-2 rounded text-sm transition-colors" data-bpm="160">
+                                        Allegro (160)
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Practice Tips -->
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-800 mb-2">Practice Tips:</h4>
+                                <ul class="text-sm text-green-700 space-y-1">
+                                    <li>• Start slow (60-80 BPM) for chord changes</li>
+                                    <li>• Use 4/4 time for most pop/rock songs</li>
+                                    <li>• Practice scales at 100-120 BPM</li>
+                                    <li>• Gradually increase tempo as you improve</li>
+                                    <li>• Focus on staying in time, not speed</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Practice Plan Section -->
+                <section id="practice-plan" class="content-section hidden">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">The Practice Protocol</h2>
+                    <p class="text-gray-600 mb-6">Consistency is more important than intensity. A structured routine ensures you develop all your skills in a balanced way.</p>
+                    <div class="content-card p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-green-600">Sample Weekly Routine</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead>
+                                    <tr class="border-b">
+                                        <th class="p-2 font-semibold">Day</th>
+                                        <th class="p-2 font-semibold">Focus</th>
+                                        <th class="p-2 font-semibold">Activity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="p-2">Day 1</td>
+                                        <td class="p-2">Technique</td>
+                                        <td class="p-2">Finger stretching, practice scales (e.g., C Major).</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-2">Day 2</td>
+                                        <td class="p-2">Chords</td>
+                                        <td class="p-2">Review essential chords, practice switching between them.</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-2">Day 3</td>
+                                        <td class="p-2">Rhythm</td>
+                                        <td class="p-2">Practice strumming patterns with a metronome.</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-2">Day 4</td>
+                                        <td class="p-2">Songs</td>
+                                        <td class="p-2">Apply skills to play a full song from your list.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2">Day 5</td>
+                                        <td class="p-2">Review</td>
+                                        <td class="p-2">Combine exercises and review challenging parts.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
